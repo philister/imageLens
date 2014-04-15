@@ -41,8 +41,13 @@ target.find('.loading_image').remove();
 
             target.css({ backgroundImage: "url('" + imageSrc + "')" });
 
-            target.mousemove(setPosition);
+            // target.mousemove(setPosition);
             $(this).mousemove(setPosition);
+            $(this).mouseleave(function(){
+                target.hide();
+            });
+
+            target.css({ 'pointer-events', 'none' });
 
             function setPosition(e) {
 
